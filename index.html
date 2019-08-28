@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Movie Ticket</title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.4.1.js"></script>
-    <script src="js/scripts.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h2>Movie Ticket</h2>
+<head>
+  <title>Movie Ticket</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Movie Ticket</h2>
+    </div>
+    <form id="movies">
+      <div class="form-group">
+
+        <p>Please select the name of a movie:</p>
+        <select class="form-control" id="movieName">
+          <option value="Titanic">Titanic</option>
+          <option value="Interstellar">Interstellar</option>
+          <option value="Godfather">Godfather</option>
+          <option value="Avenger">Avenger(First Release)</option>
+        </select>
+        <p>Please select the time of the day that you would like to see the movie:</p>
       </div>
-      <form id="movies">
-        <div class="form-group">
-          <h3>Please select only one for each option!</h3>
-          <p>Please select the name of a movie:</p>
-          <input type="checkbox" name="movie" value="spiderman">SpiderMan(Non First Release)<br>
-          <input type="checkbox" name="movie" value="titanic">Titanic<br>
-          <input type="checkbox" name="movie" value="interstellar">interstellar<br>
-          <input type="checkbox" name="movie" value="godfather">godfather<br>
-          <input type="checkbox" name="movie" value="sixthsence">Sixth Sence<br>
-          <input type="checkbox" name="movie" value="casablanca">Casablanca<br>
-          <input type="checkbox" name="movie" value="avenger">Avenger<br>
+      <div class="form-group">
+        <select class="form-control" id="movieTime">
+          <option value="morning">10am(Discounted)</option>
+          <option value="afternoon">2pm</option>
+          <option value="evening">8pm</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <p>Please select your age group:</p>
+        <select class="form-control" id="age">
+          <option value="kid">kid</option>
+          <option value="adult">adult</option>
+          <option value="senior">senior</option>
         </div>
-        <div class="form-group">
-          <p>Please select the time of the day that you would like to see the movie:</p>
-          <input type="checkbox" name="matinee" value="morning"> Morning: 10:00 AM (Discounted Ticket Price!)<br>
-          <input type="checkbox" name="matinee" value="afternoon">Afternoon: 2:00 PM<br>
-          <input type="checkbox" name="matinee" value="evening">Evening: 8:00 PM<br>
-        </div>
-        <div class="form-group">
-          <p>Please select your age group:</p>
-          <input type="checkbox" name="age" value="child">Child<br>
-          <input type="checkbox" name="age" value="adult">Adult<br>
-          <input type="checkbox" name="age" value="senior">Senior (Discounted Ticket Price!)<br>
-        </div>
-       <button type="submit">Submit</button>
+
       </form>
-      <span id="work-responses">
+      <span id="result-price">
         <p><b>See ticket price:</b></p>
       </span>
     </div>
   </body>
-</html>
+  </html>
