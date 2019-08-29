@@ -27,8 +27,10 @@ console.log(inputtedAge);
   var newTicket = new Ticket(inputtedMovieName, inputtedMovieTime, inputtedAge);
     newTicket.calculatePrice();
     console.log(newTicket.price);
+
+
+ var finalPrice = newTicket.price;
+$(".finalprice").text(finalPrice);
+    $("#result-price").show();
   });
 });
- //var finalPrice = newTicket.price
-//$(".finalPrice").text(finalPrice);
-    $("#result-price").show();
