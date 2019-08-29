@@ -1,49 +1,34 @@
-// Business Logic for AddressBook ---------
-function Price() {
-  this.tickets = [];
-  //this.currentId = 0
+// Business Logic for Ticket -------
+    function Ticket(movieName, movieTime,age) {
+    this.movieName = movieName,
+    this.movieTime = movieTime,
+     this.age = age,
+     this.price = 20
 }
-
-Price.prototype.findMovie = function(movie) {
-  for (var i=0; i<this.tickets.length; i++) {
-    if (this.tickets[i].movieName === $("#movieName").val()){
-      return this.tickets[i];
-      }
-    }
-  }
-
-Price.prototype.findmovieTime = function(movietime) {
-    for (var i=0; i<this.tickets.length; i++) {
-      if (this.tickets[i].movieTime === $("#movieTime").val()){
-        return this.tickets[i];
-        }
-      }
-    }
-
- Price.prototype.findage = function(age) {
-    for (var i=0; i<this.tickets.length; i++) {
-      if (this.tickets[i].age === $("#age").val()){
-        return this.tickets[i];
-        }
-      }
-    }
-
-
-
-
-// Business Logic for ticket ---------
-function Ticket(movieName, movietime, age) {
-  this.movieName = movieName,
-  this.movietime = movietime,
-  this.age = age
+Ticket.prototype.calculatePrice = function() {
+  if( this.movieName === "Spiderman" && (this.movieTime === "2pm" || this.movieTime === "8pm") && (this.age ==="kid" || this.age === "adult")){
+   this.price = 30;
+ }else if (this.movieName === "spiderman" && this.movieTime === "10am" && this.age !== "senior") {
+   this.price =25;
+ }else if (this.movieName === "spiderman"  && this.movieTime == "10am" && this.age === "senior") {
+   this.price = 20;
+ }
 }
-// User Interface Logic ---------
+//user interface logic-----
+$(document).ready(function() {
+  $("form#movies").submit(function(event) {
+    event.preventDefault();
+    var inputtedMovieName = $("input:radio[name=movie]:checked").val();
+    var inputtedMovieTime = $("input:radio[name=movieTime]:checked").val();
+    var inputtedAge = $("input:radio[name=age]:checked").val();
+console.log(inputtedAge);
 
-function displayticketPrice(priceToDisplay) {
-  var price = $("#result-price");
-  var htmlForPriceInfo = "";
-  priceToDisplay.Ticket.forEach(function(price) {
-  htmlForPriceeInfo += "<li id=" + place.id + ">" + place.location + " " + place.landmark + "</li>";
+
+  var newTicket = new Ticket(inputtedMovieName, inputtedMovieTime, inputtedAge);
+    newTicket.calculatePrice();
+    console.log(newTicket.price);
   });
-  placesList.html(htmlForPriceInfo);
-};
+});
+ //var finalPrice = newTicket.price
+//$(".finalPrice").text(finalPrice);
+    $("#result-price").show();

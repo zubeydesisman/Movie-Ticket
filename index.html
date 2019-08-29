@@ -13,36 +13,75 @@
       <h2>Movie Ticket</h2>
     </div>
     <form id="movies">
-      <div class="form-group">
-
-        <p>Please select the name of a movie:</p>
-        <select class="form-control" id="movieName">
-          <option value="Titanic">Titanic</option>
-          <option value="Interstellar">Interstellar</option>
-          <option value="Godfather">Godfather</option>
-          <option value="Avenger">Avenger(First Release)</option>
-        </select>
+      <p>Please select the name of a movie:</p>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movie" value="Titanic">
+          Titanic
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movie" value="Godfather">
+          Godfather
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movie" value="Interstellar">
+          Interstellar
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movie" value="Spiderman">
+          Spiderman (First Release!)
+        </label>
+      </div>
+      <p>Please select the time of the day that you would like to see the movie:</p>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movieTime" value="10am">
+          10am (Discounted!)
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movieTime" value="2pm">
+          2pm
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="movieTime" value="8pm">
+          8pm
+        </label>
+      </div>
+      <label>
         <p>Please select the time of the day that you would like to see the movie:</p>
-      </div>
-      <div class="form-group">
-        <select class="form-control" id="movieTime">
-          <option value="morning">10am(Discounted)</option>
-          <option value="afternoon">2pm</option>
-          <option value="evening">8pm</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <p>Please select your age group:</p>
-        <select class="form-control" id="age">
-          <option value="kid">kid</option>
-          <option value="adult">adult</option>
-          <option value="senior">senior</option>
+        <div class="radio">
+          <label>
+            <input type="radio" name="age" value="kid">
+            kid
+          </label>
         </div>
-
+        <div class="radio">
+          <label>
+            <input type="radio" name="age" value="adult">
+            adult
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="age" value="senior">
+            Senior(Discounted!)
+          </label>
+        </div>
+        <button type="submit" class="btn-primary">Ticket Price</button>
       </form>
-      <span id="result-price">
-        <p><b>See ticket price:</b></p>
-      </span>
+      <div id="result-price">
+        <p><span class= "finalprice"></span></p>
+      </div>
     </div>
   </body>
   </html>
